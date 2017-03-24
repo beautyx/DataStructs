@@ -55,7 +55,7 @@ int main(int argc, char *argv[]){
 
 	}
 
-		for(i=0; i<CircleList_Length(list); i++)
+	for(i=0; i<CircleList_Length(list); i++)
 	{
 		//获取游标所指元素,然后游标下移
 		struct Value* pv = (struct Value*)CircleList_Next(list);
