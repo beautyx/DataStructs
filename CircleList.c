@@ -2,11 +2,12 @@
 
 #include "CircleList.h"
 
+//å¾ªç¯é“¾è¡¨çš„ç»“æ„ä½“
 typedef struct _tag_CircleList{
 
-	CircleListNode header;//Í·½áµã
-	CircleListNode* slider;//ÓÎ±ê
-	int length;//³¤¶È
+	CircleListNode header;//å¤´ç»“ç‚¹
+	CircleListNode* slider;//æ¸¸æ ‡
+	int length;//é•¿åº¦
 
 }TCircleList;
 
@@ -39,7 +40,7 @@ void CircleListDestroy(CircleList *list){
 
 }
 
-//ÈÃÁ´±í»Ö¸´µ½³õÊ¼×´Ì¬
+//è®©é“¾è¡¨æ¢å¤åˆ°åˆå§‹çŠ¶æ€
 void CircleListClear(CircleList *list){
 
 	if (list == NULL)
@@ -92,20 +93,20 @@ int CircleListInsert(CircleList *list, CircleListNode *node, int pos){
 		cur = cur->next;
 	}
 
-	//µ±lengthÎª0 µÄÊ±ºò,ĞèÒªÖØÖÃÒ»ÏÂÓÎ±êÎ»ÖÃ
+	//å½“lengthä¸º0 çš„æ—¶å€™,éœ€è¦é‡ç½®ä¸€ä¸‹æ¸¸æ ‡ä½ç½®
 	if (cl->length == 0)
 	{
 		cl->slider = node;
 	}
 
-	//ÒÔÏÂÁ½¾ä ¶ÔÓÚÍ·²åÎ²²å ¸Õ¿ªÊ¼Á´±íÎª¿ÕµÄÊ±ºò ¶¼ÊÊÓÃ
+	//ä»¥ä¸‹ä¸¤å¥ å¯¹äºå¤´æ’å°¾æ’ åˆšå¼€å§‹é“¾è¡¨ä¸ºç©ºçš„æ—¶å€™ éƒ½é€‚ç”¨
 	node->next = cur->next;
 	cur->next = node;
 
-	//Í·²åµÄÊ±ºòĞèÒªÖØÖÃÒ»ÏÂnodeµÄnextĞÎ³ÉÑ­»·Á´±í
+	//å¤´æ’çš„æ—¶å€™éœ€è¦é‡ç½®ä¸€ä¸‹nodeçš„nextå½¢æˆå¾ªç¯é“¾è¡¨
 	if (cur == (CircleListNode *)list)
 	{
-		//Ê×ÏÈÄÃµ½Î²½Úµã
+		//é¦–å…ˆæ‹¿åˆ°å°¾èŠ‚ç‚¹
 		CircleListNode * last = CircleListGet(list, cl->length - 1);
 		if (last != NULL)
 		{
@@ -122,7 +123,7 @@ int CircleListInsert(CircleList *list, CircleListNode *node, int pos){
 CircleListNode * CircleListDelete(CircleList *list, int pos){
 
 	TCircleList *cl = (TCircleList *)list;
-	//´ıÉ¾³ı½Úµãret
+	//å¾…åˆ é™¤èŠ‚ç‚¹ret
 	CircleListNode *ret = NULL;
 
 	if (list == NULL || pos > cl->length -1 )
@@ -139,12 +140,12 @@ CircleListNode * CircleListDelete(CircleList *list, int pos){
 		cur = cur->next;
 	}
 
-	//1.ĞèÒªÅĞ¶ÏÒ»ÏÂdel½ÚµãÊÇ·ñÊÇÍ·½Úµã
+	//1.éœ€è¦åˆ¤æ–­ä¸€ä¸‹delèŠ‚ç‚¹æ˜¯å¦æ˜¯å¤´èŠ‚ç‚¹
 	if (cur == (CircleListNode *)list)
 	{
 		CircleListNode *last = CircleListGet(list, cl->length - 1);
 
-		//ÅĞ¶ÏÁ´±íÊÇ·ñÎª¿Õ
+		//åˆ¤æ–­é“¾è¡¨æ˜¯å¦ä¸ºç©º
 		if (last != NULL)
 		{
 			cl->header.next = cur->next;
@@ -153,19 +154,19 @@ CircleListNode * CircleListDelete(CircleList *list, int pos){
 		
 	}
 
-	//2.É¾³ıÖĞ¼äµÄ½Úµã,ÖĞ¼äÈÎºÎÒ»¸ö½ÚµãºÍÎ²½Úµã²Ù×÷¶¼ÏàÍ¬
+	//2.åˆ é™¤ä¸­é—´çš„èŠ‚ç‚¹,ä¸­é—´ä»»ä½•ä¸€ä¸ªèŠ‚ç‚¹å’Œå°¾èŠ‚ç‚¹æ“ä½œéƒ½ç›¸åŒ
 
 	ret = cur->next;
 	cur->next = ret->next;
 	cl->length--;
 
-	//Èç¹ûÉ¾³ıµÄÔªËØÎªÓÎ±êËùÖ¸µÄÔªËØ
+	//å¦‚æœåˆ é™¤çš„å…ƒç´ ä¸ºæ¸¸æ ‡æ‰€æŒ‡çš„å…ƒç´ 
 	if (cl->slider == ret)
 	{
 		cl->slider = ret->next;
 	}
 
-	//ÈôÉ¾³ıÔªËØºó,Á´±í³¤¶ÈÎª0
+	//è‹¥åˆ é™¤å…ƒç´ å,é“¾è¡¨é•¿åº¦ä¸º0
 	if (cl->length == 0)
 	{
 		cl->header.next = NULL;
@@ -244,7 +245,7 @@ CircleListNode *CircleListDeleteNode(CircleList *list, CircleListNode *node){
 
 }
 
-//ÈÃÓÎ±êÖ¸ÏòµÚÒ»¸öÒµÎñ½Úµã
+//è®©æ¸¸æ ‡æŒ‡å‘ç¬¬ä¸€ä¸ªä¸šåŠ¡èŠ‚ç‚¹
 CircleListNode *CircleListReset(CircleList *list){
 
 	TCircleList *cl = (TCircleList *)list;
@@ -263,7 +264,7 @@ CircleListNode *CircleListReset(CircleList *list){
 
 }
 
-//»ñÈ¡ÓÎ±êËùÖ¸µÄÎ»ÖÃ
+//è·å–æ¸¸æ ‡æ‰€æŒ‡çš„ä½ç½®
 CircleListNode *CircleListCurrent(CircleList *list){
 
 	TCircleList *cl = (TCircleList *)list;
@@ -280,7 +281,7 @@ CircleListNode *CircleListCurrent(CircleList *list){
 
 }
 
-//·µ»Øµ±Ç°Î»ÖÃ½áµã Í¬Ê±ÓÎ±êÏÂÒÆ
+//è¿”å›å½“å‰ä½ç½®ç»“ç‚¹ åŒæ—¶æ¸¸æ ‡ä¸‹ç§»
 CircleListNode *CircleListNext(CircleList *list){
 
 	TCircleList *cl = (TCircleList *)list;
