@@ -31,7 +31,7 @@ CircleListNode *CircleListDeleteNode(CircleList *list,CircleListNode *node);
 CircleListNode *CircleListReset(CircleList *list);
 //得到当前游标所指的node
 CircleListNode *CircleListCurrent(CircleList *list);
-//得到当前游标所指的下一个node
+//返回当前位置结点,同时游标下移
 CircleListNode *CircleListNext(CircleList *list);
 
 
