@@ -15,41 +15,41 @@ typedef struct _tag_DLinklistNode{
 
 /*
 
-	¸ÃË«ÏòÁ´±íµÄ¾ÖÏŞĞÔÊÇ²åÈëµÄÔªËØ½ÚµãÎ¨Ò»
+	è¯¥åŒå‘é“¾è¡¨çš„å±€é™æ€§æ˜¯æ’å…¥çš„å…ƒç´ èŠ‚ç‚¹å”¯ä¸€,å³ä¸èƒ½æ’å…¥åŒä¸€ä¸ªèŠ‚ç‚¹ä¸¤æ¬¡æˆ–å¤šæ¬¡
 
 */
 
-//Ë«ÏòÁ´±íµÄ´´½¨
+//åŒå‘é“¾è¡¨çš„åˆ›å»º
 DLinkList *DLinkListCreate();
 
-//ÔÚÎ»ÖÃpos²åÈëÒ»¸öĞÂ½Úµã
+//åœ¨ä½ç½®posæ’å…¥ä¸€ä¸ªæ–°èŠ‚ç‚¹
 int DLinkListInsert(DLinkList *list, DLinkListNode *node, int pos);
-//Ë«ÏòÁ´±íµÄ³¤¶È
+//åŒå‘é“¾è¡¨çš„é•¿åº¦
 int DLinkListLength(DLinkList *list);
-//Ë«ÏòÁ´±íµÄÏú»Ù
+//åŒå‘é“¾è¡¨çš„é”€æ¯
 int DLinkListDestroy(DLinkList *list);
 
-//µÃµ½Î»ÖÃposµÄ½Úµã
+//å¾—åˆ°ä½ç½®posçš„èŠ‚ç‚¹
 DLinkListNode * DLinkListGet(DLinkList *list, int pos);
 
-//»ñÈ¡µ±Ç°ÓÎ±êËùÖ¸½Úµã,²¢ÈÃÓÎ±êºóÒÆÒ»´Î
+//è·å–å½“å‰æ¸¸æ ‡æ‰€æŒ‡èŠ‚ç‚¹,å¹¶è®©æ¸¸æ ‡åç§»ä¸€æ¬¡
 DLinkListNode * DLinkListNextNode(DLinkList *list);
 
-//»ñÈ¡µ±Ç°ÓÎ±êËùÖ¸½Úµã,²¢ÈÃÓÎ±êÇ°ÒÆÒ»´Î
+//è·å–å½“å‰æ¸¸æ ‡æ‰€æŒ‡èŠ‚ç‚¹,å¹¶è®©æ¸¸æ ‡å‰ç§»ä¸€æ¬¡
 DLinkListNode * DLinkListPreNode(DLinkList *list);
 
-//ÈÃÓÎ±êÖ¸ÏòµÚÒ»¸öÒµÎñ½Úµã
+//è®©æ¸¸æ ‡æŒ‡å‘ç¬¬ä¸€ä¸ªä¸šåŠ¡èŠ‚ç‚¹
 DLinkListNode * DLinkListReset(DLinkList *list);
 
-//É¾³ıÎ»ÖÃposµÄ½Úµã
+//åˆ é™¤ä½ç½®posçš„èŠ‚ç‚¹
 DLinkListNode * DLinkListDelete(DLinkList *list, int pos);
 
-//É¾³ınode½Úµã
+//åˆ é™¤nodeèŠ‚ç‚¹
 DLinkListNode * DLinkListDeleteNode(DLinkList *list, DLinkListNode *node);
-//ÄÃµ½µ±Ç°ÓÎ±êËùÖ¸½Úµã
+//æ‹¿åˆ°å½“å‰æ¸¸æ ‡æ‰€æŒ‡èŠ‚ç‚¹
 DLinkListNode * DLinkListCurrentNode(DLinkList *list);
 
-//Çå¿ÕË«ÏòÁ´±í
+//æ¸…ç©ºåŒå‘é“¾è¡¨
 int DLinkListClear(DLinkList *list);
 
 
