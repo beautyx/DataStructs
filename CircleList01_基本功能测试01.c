@@ -46,7 +46,7 @@ int main(int argc,char *argv[]){
 	CircleListInsert(list, (CircleListNode *)&v8, 0);
 
 
-	//如何证明是循环链表
+	//膶莽艧脦脰陇膫梅臉脟艃颅钮藝脕麓膮铆
 
 	for (i = 0; i < 2 * CircleListLength(list);i++){
 	
