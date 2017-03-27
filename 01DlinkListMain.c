@@ -47,7 +47,7 @@ int main(){
 
 	printf("\n------------------------------------------------\n");
 
-	//��Ϊ֮ǰ��λ��1��������һ��Ԫ���α�λ�ñ��ı�,�����α�λ��
+	//因为之前在位置1处插入了一个元素游标位置被改变,重置游标位置
 	DLinkListReset(tlist);
 
 	for (i = 0; i < DLinkListLength(tlist)-1; i++)
@@ -65,7 +65,7 @@ int main(){
 	printf("\n------------------------------------------------\n");
 
 
-	//����Ҫע��,����ƶ�DLinkListLength(tlist)-1��,��Ϊ��DLinkListLength(tlist)��ҪΪnull
+	//这里要注意,最多移动DLinkListLength(tlist)-1个,因为到DLinkListLength(tlist)就要为null
 	for (i = DLinkListLength(tlist)-1; i >0; i--)
 	{
 
