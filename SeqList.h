@@ -6,20 +6,24 @@
 typedef void SeqList;
 typedef void SeqListNode;
 
-//�������Ա�
+/*
+ 使用线性表的顺序存储来模拟栈时,在尾部添加或者删除元素,不会涉及到数组的元素大量移动,所以栈的开口应该是数组元素的最后一个元素.
+*/
+
+//创建线性表
 SeqList * SeqListCreate(int capacity);
-//�������Ա�
+//销毁线性表
 void SeqListDestroy(SeqList *list);
-//������Ա�
+//清空线性表
 void SeqListClear(SeqList *list);
-//��ȡ���Ա���Ԫ�ظ���
+//获取线性表的元素个数
 int SeqListLength(SeqList *list);
-//��ȡ���Ա�������
+//获取线性表的容量
 int SeqListCapacity(SeqList *list);
-//��posλ�ò���Ԫ��node
+//在pos位置插入元素node
 int SeqListInsert(SeqList *list, SeqListNode *node, int pos);
-//�õ�posλ�õ�Ԫ��
+//得到pos位置的元素
 SeqListNode * SeqListGet(SeqList *list, int pos);
-//ɾ��posλ�õ�Ԫ��
+//删除pos位置的元素
 SeqListNode * SeqListDelete(SeqList *list, int pos);
 
