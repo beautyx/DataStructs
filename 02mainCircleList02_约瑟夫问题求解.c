@@ -45,16 +45,6 @@ int main(int argc, char *argv[]){
 	CircleListInsert(list, (CircleListNode *)&v8, CircleListLength(list));
 
 
-	//如何证明是循环链表
-
-	for (i = 0; i < CircleListLength(list); i++){
-
-		//获取游标所指元素 然后游标下移
-		struct Value * pv = (struct Value *)CircleListNext(list);
-		printf("v[%d] = %d\n", i + 1, pv->v);
-
-	}
-
 	for(i=0; i<CircleList_Length(list); i++)
 	{
 		//获取游标所指元素,然后游标下移
