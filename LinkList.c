@@ -112,7 +112,7 @@ LinkListNode * LinkListGet(LinkList *list, int pos)
 	LinkListNode *ret = NULL;
 	TLinkList *tlist = (TLinkList *)list;
 
-	if (list == NULL || pos < 0 || pos > tlist->length)
+	if (list == NULL || pos < 0 || pos > tlist->length || tlist->length == 0)
 	{
 
 		return ret;
