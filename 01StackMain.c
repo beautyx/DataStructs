@@ -24,7 +24,11 @@ int main(){
 	printf("capacity = %d\n", SeqStackCapacity(stack));
 	printf("size = %d\n", SeqStackSize(stack));
 
-	printf("top = %d\n", *(int *)SeqStackTop(stack));
+	if(SeqStackSize(stack) > 0 ){
+	
+		printf("top = %d\n", *(int *)SeqStackTop(stack));
+
+	}
 
 	while (SeqStackSize(stack)>0) {
 	
