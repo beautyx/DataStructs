@@ -1,11 +1,11 @@
 #include "SeqList.h"
 
 
-//ÔÚ½á¹¹ÌåÖÐÌ×Ò»¼¶Ö¸Õë
+//åœ¨ç»“æž„ä½“ä¸­å¥—ä¸€çº§æŒ‡é’ˆ
 typedef struct _tag_SeqList {
 
-	int length;//Õ»µÄÊµ¼ÊÔªËØ¸öÊý
-	int capacity;//Õ»µÄÈÝÁ¿,×î´óÄÜ´æÔªËØ¸öÊý
+	int length;//æ ˆçš„å®žé™…å…ƒç´ ä¸ªæ•°
+	int capacity;//æ ˆçš„å®¹é‡,æœ€å¤§èƒ½å­˜å…ƒç´ ä¸ªæ•°
 	unsigned int **node;
 
 }TSeqList;
@@ -25,7 +25,7 @@ SeqList * SeqListCreate(int capacity) {
 
 	memset(tmp, 0, sizeof(TSeqList));
 
-	//¸ù¾ÝcapacityµÄ´óÐ¡·ÖÅä½ÚµãµÄ¿Õ¼ä
+	//æ ¹æ®capacityçš„å¤§å°åˆ†é…èŠ‚ç‚¹çš„ç©ºé—´
 	tmp->node = (unsigned int *)malloc(sizeof(unsigned int *)* capacity);
 	if (tmp->node == NULL)
 	{
@@ -140,7 +140,7 @@ SeqListNode * SeqListGet(SeqList *list, int pos) {
 	TSeqList *tlist = (TSeqList *)list;
 	SeqListNode *ret = NULL;
 
-	if (list == NULL || tlist->node == NULL || pos < 0 || pos > tlist->length)
+	if (list == NULL || tlist->node == NULL || pos < 0 || pos >= tlist->length)
 	{
 		ret = -1;
 		return ret;
@@ -159,7 +159,7 @@ SeqListNode * SeqListDelete(SeqList *list, int pos) {
 	TSeqList *tlist = (TSeqList *)list;
 	SeqListNode *ret = NULL;
 
-	if (list == NULL || tlist->node == NULL || pos < 0 || pos > tlist->length)
+	if (list == NULL || tlist->node == NULL || pos < 0 || pos >= tlist->length)
 	{
 		ret = -1;
 		return ret;
