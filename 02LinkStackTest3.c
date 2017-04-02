@@ -128,6 +128,6 @@ int main(){
 
 	printf("8+(3-1)*5 = %d\n",result);
 
-	system("pause");
+	system("pause");  
 	return EXIT_SUCCESS;
 }
