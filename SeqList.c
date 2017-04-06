@@ -164,13 +164,16 @@ SeqListNode * SeqListDelete(SeqList *list, int pos) {
 		ret = -1;
 		return ret;
 	}
-	for (i = pos + 1; i < tlist->length;i++)
+	
+	ret =  tlist->node[pos];
+		
+      for (i = pos; i < tlist->length;i++)
 	{
 		tlist->node[i] = tlist->node[i+1];
 	}
 
 	tlist->length--;
 
-	return tlist->node[pos];
+	return ret;
 
 }
