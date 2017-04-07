@@ -10,6 +10,9 @@ typedef struct BitNode{
 
 }BiTNode, *BiTree;
 
+/*
+ 	递归的用先序中序后序遍历一棵树的本质是:先序是访问第一次就输出节点的数值;中序是访问第二次输出;后序是访问第三次再输出:
+*/
 void preOrder(BiTree root){
 
 	if (root == NULL)
@@ -50,7 +53,7 @@ void postOrder(BiTree root){
 }
 
 
-//����һ������Ҷ�ӽڵ����
+//计算一棵树的叶子节点个数
 void  countLeaf(BiTree root,int *sum){
 
 	if (root == NULL)
@@ -75,7 +78,7 @@ void  countLeaf(BiTree root,int *sum){
 }
 
 
-//����һ������Ҷ�ӽڵ����
+//计算一棵树的叶子节点个数
 void  countLeaf2(BiTree root,int *sum){
 
 	if (root == NULL)
