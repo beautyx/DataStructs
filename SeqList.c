@@ -80,7 +80,7 @@ int SeqListLength(SeqList *list) {
 
 	if (list == NULL)
 	{
-		return;
+		return 0;
 	}
 	TSeqList *tlist = (TSeqList *)list;
 
@@ -92,7 +92,7 @@ int SeqListCapacity(SeqList *list) {
 
 	if (list == NULL)
 	{
-		return;
+		return 0;
 	}
 	TSeqList *tlist = (TSeqList *)list;
 
