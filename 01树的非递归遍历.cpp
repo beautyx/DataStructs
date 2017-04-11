@@ -15,18 +15,18 @@ typedef struct BiTNode		BiTNode;
 typedef struct BiTNode*		BiTree;
 
 /*
-²½Öè1:Èç¹ûµ±Ç°½ÚµãÓÐ×ó×ÓÊ÷,Ôò°Ñ×ó×ÓÊ÷½ÚµãÈëÕ»,È»ºó°ÑÖ¸ÕëÖ¸Ïò×ó×ÓÊ÷¼ÌÐøÍùÏÂ±éÀú;
-Èç¹ûµ±Ç°½ÚµãÃ»ÓÐ×ó×ÓÊ÷ÁË,Ôò·ÃÎÊ¸Ã½Úµã(°Ñµ±Ç°½Úµã´òÓ¡³öÀ´);
-²½Öè2:Èç¹ûµ±Ç°½ÚµãÓÐÓÒ×ÓÊ÷,ÔòÖØ¸´²½Öè1;
-Èç¹ûµ±Ç°½ÚµãÃ»ÓÐÓÒ×ÓÊ÷(ËµÃ÷¸Ã½Úµã·ÃÎÊÍê±Ï),Ôò¸ù¾ÝÕ»¶¥ÔªËØÖ¸Ê¾Ö¸Õë»ØËÝµ½Õ»¶¥ÔªËØÔÙ·ÃÎÊÕ»¶¥ÔªËØ,²¢·ÃÎÊÕ»¶¥ÔªËØµÄÓÒ×ÓÊ÷,ÖØ¸´²½Öè2;
-Èç¹ûÕ»Îª¿ÕÔò±éÀú½áÊø
+æ­¥éª¤1:å¦‚æžœå½“å‰èŠ‚ç‚¹æœ‰å·¦å­æ ‘,åˆ™æŠŠå·¦å­æ ‘èŠ‚ç‚¹å…¥æ ˆ,ç„¶åŽæŠŠæŒ‡é’ˆæŒ‡å‘å·¦å­æ ‘ç»§ç»­å¾€ä¸‹éåŽ†;
+å¦‚æžœå½“å‰èŠ‚ç‚¹æ²¡æœ‰å·¦å­æ ‘äº†,åˆ™è®¿é—®è¯¥èŠ‚ç‚¹(æŠŠå½“å‰èŠ‚ç‚¹æ‰“å°å‡ºæ¥);
+æ­¥éª¤2:å¦‚æžœå½“å‰èŠ‚ç‚¹æœ‰å³å­æ ‘,åˆ™é‡å¤æ­¥éª¤1;
+å¦‚æžœå½“å‰èŠ‚ç‚¹æ²¡æœ‰å³å­æ ‘(è¯´æ˜Žè¯¥èŠ‚ç‚¹è®¿é—®å®Œæ¯•),åˆ™æ ¹æ®æ ˆé¡¶å…ƒç´ æŒ‡ç¤ºæŒ‡é’ˆå›žæº¯åˆ°æ ˆé¡¶å…ƒç´ ,å¹¶è®¿é—®æ ˆé¡¶å…ƒç´ çš„å³å­æ ‘,é‡å¤æ­¥éª¤2;
+å¦‚æžœæ ˆä¸ºç©ºåˆ™éåŽ†ç»“æŸ
 
 
 */
 
 
 
-//Ò»Ö±Ïò×ó×ß,ÄÃµ½×î×ó±ßµÄÒ»¸öÒ¶×Ó½Úµã,¾ÍÊÇÖÐÐò±éÀúµÄµÚÒ»¸ö½Úµã
+//ä¸€ç›´å‘å·¦èµ°,æ‹¿åˆ°æœ€å·¦è¾¹çš„ä¸€ä¸ªå¶å­èŠ‚ç‚¹,å°±æ˜¯ä¸­åºéåŽ†çš„ç¬¬ä¸€ä¸ªèŠ‚ç‚¹
 BiTNode * goLeftNode(BiTNode* T, stack<BiTNode* > &s){
 
 	if (T == NULL)
@@ -45,7 +45,7 @@ BiTNode * goLeftNode(BiTNode* T, stack<BiTNode* > &s){
 
 
 
-//Õ»µÄ´´½¨²¿·ÖÓÃSTLÊµÏÖ
+//æ ˆçš„åˆ›å»ºéƒ¨åˆ†ç”¨STLå®žçŽ°
 
 void inOrder(BiTNode * root){
 
@@ -57,20 +57,20 @@ void inOrder(BiTNode * root){
 	BiTNode * t = NULL;
 	stack<BiTNode *> s;
 
-	//ÕÒµ½µÚÒ»¸ö×ó×ÓÊ÷µÄÒ¶×Ó½Úµã
+	//æ‰¾åˆ°ç¬¬ä¸€ä¸ªå·¦å­æ ‘çš„å¶å­èŠ‚ç‚¹
 	t = goLeftNode(root, s);
 
 	while (t != NULL){
 
 		printf("%d ", t->data);
 
-		//Èç¹ûtÓÐÓÒ×ÓÊ÷ÖØ¸´²½Öè1
+		//å¦‚æžœtæœ‰å³å­æ ‘é‡å¤æ­¥éª¤1
 		if (t->rchild != NULL)
 		{
-			//ÄÃµ½ÓÒ×ÓÊ÷ÖÐÖÐÐò±éÀúµÄÐÂÆðµã
+			//æ‹¿åˆ°å³å­æ ‘ä¸­ä¸­åºéåŽ†çš„æ–°èµ·ç‚¹
 			t = goLeftNode(root->rchild, s);
 		}
-		//Èç¹ûtÃ»ÓÐÓÒ×ÓÊ÷Èç¹ûÕ»·Ç¿Õ,Ôò¸ù¾ÝÕ»¶¥Ö¸Ê¾»ØÍË
+		//å¦‚æžœtæ²¡æœ‰å³å­æ ‘å¦‚æžœæ ˆéžç©º,åˆ™æ ¹æ®æ ˆé¡¶æŒ‡ç¤ºå›žé€€
 		else if (!s.empty()){
 
 			t = s.top();
@@ -78,7 +78,7 @@ void inOrder(BiTNode * root){
 
 
 		}
-		//Èç¹ûtÃ»ÓÐÓÒ×ÓÊ÷Èç¹ûÕ»¿ÕÄÇÃ´½áÊø±éÀú
+		//å¦‚æžœtæ²¡æœ‰å³å­æ ‘å¦‚æžœæ ˆç©ºé‚£ä¹ˆç»“æŸéåŽ†
 		else{
 
 			t = NULL;
